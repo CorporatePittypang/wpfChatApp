@@ -89,12 +89,12 @@
         <!-- Time containers -->
         <StackPanel Name="ExtraDetails" Grid.Row="2"
                     Orientation="Horizontal"
+                    HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}, ConverterParameter=True}"
                     Opacity="0">
           <!-- Sent time -->
           <TextBlock
                    Text="{Binding MessageSentTime, Converter={local:TimeToDisplayTimeConverter}}"
                    Foreground="{StaticResource ForegroundLightBrush}"
-                   HorizontalAlignment="Right"
                    FontSize="{StaticResource FontSizeSmall}"
                    FontFamily="{StaticResource LatoRegular}"
                    Margin="0 0 15 0"
@@ -104,7 +104,6 @@
           <TextBlock
                    Text="{Binding MessageReadTime, Converter={local:TimeToReadTimeConverter}}"
                    Foreground="{StaticResource WordDarkBlueBrush}"
-                   HorizontalAlignment="Right"
                    FontSize="{StaticResource FontSizeSmall}"
                    FontFamily="{StaticResource LatoRegular}"
                    />
