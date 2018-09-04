@@ -8,50 +8,53 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <UserControl.Template>
-        <ControlTemplate TargetType="UserControl">
-            
-            <!-- Main background -->
-            <Border Background="{StaticResource ForegroundLightBrush}">
+  <UserControl.Template>
+    <ControlTemplate TargetType="UserControl">
 
-                <!-- Content -->
-                <Grid>
+      <!-- Main background -->
+      <Border>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
+        <!-- Content -->
+        <Grid>
 
-                    <!-- Top Menu -->
-                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+          <!-- Top Menu -->
+          <Grid Height="50" >
 
-                        <!-- Main buttons -->
-                        <StackPanel Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeUserIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureIcon}" />
-                        </StackPanel>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                        <!-- Settings button -->
-                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" />
+            <!-- Main buttons -->
+            <StackPanel Orientation="Horizontal">
+              <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}" />
+              <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeUserIcon}" />
+              <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureIcon}" />
+            </StackPanel>
 
-                    </Grid>
+            <!-- Settings button -->
+            <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" />
 
-                    <!-- The user content -->
-                    <ContentPresenter Grid.Row="1" />
+          </Grid>
 
-                </Grid>
+          <!-- The user content -->
+          <Border Background="{StaticResource ForegroundLightBrush}"
+                  Grid.Row="1">
+            <ContentPresenter  />
+          </Border>
+
+        </Grid>
 
 
-            </Border>
+      </Border>
 
-        </ControlTemplate>
-    </UserControl.Template>
-    
+    </ControlTemplate>
+  </UserControl.Template>
+
 </UserControl>

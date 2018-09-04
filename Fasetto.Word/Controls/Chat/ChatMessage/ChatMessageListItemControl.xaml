@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:Fasetto.Word"
              xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d" d:DesignWidth="300">
-  <Border Padding="5"  
-          Background="{StaticResource WordBlueBrush}"
+  <Border Padding="5"
           d:DataContext="{x:Static core:ChatMessageListItemDesignModel.Instance}"
           >
     <Grid>

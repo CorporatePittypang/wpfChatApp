@@ -23,6 +23,7 @@
   <Color x:Key="WordBlue">#3099c5</Color>
   <SolidColorBrush x:Key="WordBlueBrush" Color="{StaticResource WordBlue}" />
 
+  <!-- 00 needed to be transparent -->
   <Color x:Key="WordTransparentBlue">#003099c5</Color>
   <SolidColorBrush x:Key="WordTransparentBlueBrush" Color="{StaticResource WordTransparentBlue}" />
 

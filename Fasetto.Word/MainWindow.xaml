@@ -13,144 +13,144 @@
         Icon="Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimumWidth}"
         MinHeight="{Binding WindowMinimumHeight}"
-        Title="Welcome, friend!" Height="600" Width="900">
+        Title="Welcome, friend!" Height="600"  Width="900">
 
-    <Window.Resources>
-        <Style TargetType="{x:Type local:MainWindow}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Window}">
-                        <!-- Outer border with the dropshadow margin -->
-                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
-                            
-                            <!-- Main window outline -->
-                            <Grid>
+  <Window.Resources>
+    <Style TargetType="{x:Type local:MainWindow}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Window}">
+            <!-- Outer border with the dropshadow margin -->
+            <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
 
-                                <!-- Opacity mask for corners on grid -->
-                                <Border x:Name="Container"
+              <!-- Main window outline -->
+              <Grid>
+
+                <!-- Opacity mask for corners on grid -->
+                <Border x:Name="Container"
                                         Background="{StaticResource BackgroundLightBrush}"
                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" />
 
-                                <!-- Window border and dropshadown -->
-                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                <!-- Window border and dropshadown -->
+                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                     Background="{Binding ForegroundLightBrush, FallbackValue=White}">
-                                    <Border.Effect>
-                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
-                                    </Border.Effect>
-                                </Border>
+                  <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
+                  </Border.Effect>
+                </Border>
 
-                                <!-- The main window content -->
-                                <Grid>
-                                    
-                                    <!-- Corner clipping -->
-                                    <Grid.OpacityMask>
-                                        <VisualBrush Visual="{Binding ElementName=Container}" />
-                                    </Grid.OpacityMask>
-                                    
-                                    <Grid.RowDefinitions>
-                                    
-                                        <!-- Title Bar -->
-                                        <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}" />
+                <!-- The main window content -->
+                <Grid>
 
-                                        <!-- Window Content -->
-                                        <RowDefinition Height="*" />
+                  <!-- Corner clipping -->
+                  <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Container}" />
+                  </Grid.OpacityMask>
 
-                                    </Grid.RowDefinitions>
-                                    
-                                    <!-- Title Bar -->
-                                    <Grid Grid.Column="0" Panel.ZIndex="1">
+                  <Grid.RowDefinitions>
 
-                                        <Grid.ColumnDefinitions>
-                                            <!-- Icon -->
-                                            <ColumnDefinition Width="Auto" />
-                                            <!-- Title -->
-                                            <ColumnDefinition Width="*" />
-                                            <!-- Windows Button -->
-                                            <ColumnDefinition Width="Auto" />
+                    <!-- Title Bar -->
+                    <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}" />
 
-                                        </Grid.ColumnDefinitions>
+                    <!-- Window Content -->
+                    <RowDefinition Height="*" />
 
-                                        <!-- Icon -->
-                                        <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
-                                            <Image Source="/Images/Logo/logo-small.png" />
-                                        </Button>
+                  </Grid.RowDefinitions>
 
-                                        <!-- Title -->
-                                        <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
-                                            <StackPanel>
-                                                <TextBlock FontFamily="{StaticResource LatoBold}" FontSize="{StaticResource FontSizeLarge}" Margin="0,0,0,-5">
+                  <!-- Title Bar -->
+                  <Grid Grid.Column="0" Panel.ZIndex="1">
+
+                    <Grid.ColumnDefinitions>
+                      <!-- Icon -->
+                      <ColumnDefinition Width="Auto" />
+                      <!-- Title -->
+                      <ColumnDefinition Width="*" />
+                      <!-- Windows Button -->
+                      <ColumnDefinition Width="Auto" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icon -->
+                    <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
+                      <Image Source="/Images/Logo/logo-small.png" />
+                    </Button>
+
+                    <!-- Title -->
+                    <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+                      <StackPanel>
+                        <TextBlock FontFamily="{StaticResource LatoBold}" FontSize="{StaticResource FontSizeLarge}" Margin="0,0,0,-5">
                                                     <Run Text="W" Foreground="{StaticResource WordOrangeBrush}" /><Run Text="O" Foreground="{StaticResource WordBlueBrush}" /><Run Text="R" Foreground="{StaticResource WordRedBrush}" /><Run Text="D" Foreground="{StaticResource WordGreenBrush}" />
-                                                </TextBlock>
-                                                <TextBlock Text="by fasetto" Foreground="{StaticResource ForegroundDarkBrush}" TextAlignment="Center" />
-                                            </StackPanel>
-                                        </Viewbox>
+                        </TextBlock>
+                        <TextBlock Text="by fasetto" Foreground="{StaticResource ForegroundDarkBrush}" TextAlignment="Center" />
+                      </StackPanel>
+                    </Viewbox>
 
-                                        <!-- Window Buttons -->
-                                        <StackPanel Grid.Column="2" Orientation="Horizontal">
-                                            <Button Command="{Binding MinimizeCommand}" Style="{StaticResource WindowControlButton}" Content="_" />
-                                            <Button Command="{Binding MaximizeCommand}" Style="{StaticResource WindowControlButton}" Content="[ ]" />
-                                            <Button Command="{Binding CloseCommand}" Style="{StaticResource WindowCloseButton}" Content="X" />
-                                        </StackPanel>
+                    <!-- Window Buttons -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                      <Button Command="{Binding MinimizeCommand}" Style="{StaticResource WindowControlButton}" Content="_" />
+                      <Button Command="{Binding MaximizeCommand}" Style="{StaticResource WindowControlButton}" Content="[ ]" />
+                      <Button Command="{Binding CloseCommand}" Style="{StaticResource WindowCloseButton}" Content="X" />
+                    </StackPanel>
 
-                                    </Grid>
+                  </Grid>
 
-                                    <!-- Page Content -->
-                                    <Border Grid.Row="1" Padding="{Binding InnerContentPadding}" ClipToBounds="True">
-                                        <ContentPresenter Content="{TemplateBinding Content}" />
-                                    </Border>
-                                    
-                                </Grid>
-                                
-                            </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    
-    <WindowChrome.WindowChrome>
-        <WindowChrome
+                  <!-- Page Content -->
+                  <Border Grid.Row="1" Padding="{Binding InnerContentPadding}" ClipToBounds="True">
+                    <ContentPresenter Content="{TemplateBinding Content}" />
+                  </Border>
+
+                </Grid>
+
+              </Grid>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+
+  <WindowChrome.WindowChrome>
+    <WindowChrome
             ResizeBorderThickness="{Binding ResizeBorderThickness}"
             CaptionHeight="{Binding TitleHeight}"
             CornerRadius="0"
             GlassFrameThickness="0"
             />
-    </WindowChrome.WindowChrome>
+  </WindowChrome.WindowChrome>
 
-    <Border Background="{StaticResource WordBlueBrush}">
-        <Grid>
+  <Border Background="{StaticResource WordBlueBrush}">
+    <Grid>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            
-            <!-- Blue background image -->
-            <Grid.Background>
-                <ImageBrush TileMode="Tile" 
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <!-- Blue background image -->
+      <Grid.Background>
+        <ImageBrush TileMode="Tile" 
                             ViewportUnits="Absolute" 
                             Viewport="0 0 500 500" 
                             ImageSource="/Images/Backgrounds/emoji-background.png" 
                             />
-            </Grid.Background>
-
-            <local:PageHost Grid.Column="1"
+      </Grid.Background>
+      
+      <local:PageHost Grid.Column="1"
                    d:DataContext=""
                    DataContext="{Binding ApplicationViewModel.CurrentPage,
                                      Source={x:Static local:ViewModelLocator.Instance},
                                      Converter={local:ApplicationPageValueConverter}}"
                    CurrentPage="{Binding}"/>
-            
-            <!-- Side Menu -->
+
+      <!-- Side Menu -->
       <local:SideMenuControl Width="300" local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
                                      Source={x:Static local:ViewModelLocator.Instance}}">
 
-                <local:ChatListControl />
+        <local:ChatListControl />
 
-            </local:SideMenuControl>
+      </local:SideMenuControl>
 
-        </Grid>
-    </Border>
+    </Grid>
+  </Border>
 
 </Window>
