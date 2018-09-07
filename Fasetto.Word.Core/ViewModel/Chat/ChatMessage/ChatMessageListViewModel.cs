@@ -8,8 +8,8 @@ namespace Fasetto.Word.Core
   /// </summary>
   public class ChatMessageListViewModel : BaseViewModel
   {
-
     #region Public Properties
+
     /// <summary>
     /// The chat list items for the list
     /// </summary>
@@ -19,6 +19,11 @@ namespace Fasetto.Word.Core
     /// True to show the attached menu, false to hide it
     /// </summary>
     public bool AttachmentMenuVisible { get; set; }
+
+    /// <summary>
+    /// The view model for the attachment menu
+    /// </summary>
+    public ChatAttachmentPopupMenuViewModel AttachmentMenu { get; set; }
     #endregion
 
     #region Public Command
@@ -36,6 +41,9 @@ namespace Fasetto.Word.Core
     {
       // Create commands
       AttachmentButtonCommand = new RelayCommand(AttachmentButton);
+
+      // Make a default menu
+      AttachmentMenu = new ChatAttachmentPopupMenuViewModel();
     }
     #endregion
 

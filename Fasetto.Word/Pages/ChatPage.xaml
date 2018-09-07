@@ -48,18 +48,21 @@
 
     <!-- Chat list -->
     <local:ChatMessageListControl Grid.Row="1"/>
+    
     <!-- Attachment menu popup -->
-    <local:BubbleContent Grid.Row="1" 
-                         VerticalAlignment="Bottom"
-                         HorizontalAlignment="Left"
-                         local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}"
-                         />
+    <local:BubbleContent 
+      Grid.Row="1" 
+      DataContext="{Binding AttachmentMenu}"
+      VerticalAlignment="Bottom"
+      HorizontalAlignment="Left"
+      local:AnimateSlideInFromBottomProperty.Value="{Binding ViewModel.AttachmentMenuVisible, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:ChatPage}}}"
+     />
+    
     <!-- Message send text box -->
-    <Grid 
-      Grid.Row="2" 
-      MinHeight="50"
-      MaxHeight="114"
-      Background="{StaticResource ForegroundLightBrush}"
+    <Grid Grid.Row="2" 
+          MinHeight="50"
+          MaxHeight="114"
+          Background="{StaticResource ForegroundLightBrush}"
       >
 
       <Grid.ColumnDefinitions>

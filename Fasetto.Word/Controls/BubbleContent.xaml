@@ -4,14 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fasetto.Word"
+             xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d" 
+             d:DataContext="{x:Static core:ChatAttachmentPopupMenuDesignModel.Instance}"
              d:DesignHeight="100" d:DesignWidth="300">
-  
+
   <!-- Chat message container -->
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />
-      <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
 
@@ -19,20 +20,15 @@
     <Border CornerRadius="10"
             Padding="15"
             Margin="5 0 0 0"
-            Background="{StaticResource ForegroundLightBrush}"
+            Background="{Binding BubbleBackground, Converter={local:StringRGBToBrushConverter}}"
             >
 
       <Border.Effect>
         <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="{StaticResource WordLightBlue}" />
       </Border.Effect>
-      
+
       <!-- Message Text -->
-      <TextBlock VerticalAlignment="Center"
-                   FontFamily="{StaticResource LatoRegular}"
-                   Foreground="{StaticResource WordDarkBlueBrush}"
-                   TextWrapping="Wrap"
-                   Text="test"
-                   />
+      <ContentControl Content="{Binding Content, Converter={local:PopupContentConverter}}" />
     </Border>
 
     <!-- Chat bubble anchor -->
@@ -42,9 +38,9 @@
           Panel.ZIndex="1"
           StrokeThickness="0" 
           Data="M 0,0 L 10,10 L 20,0 L 0,0"
-          HorizontalAlignment="Left"
-          Fill="{StaticResource ForegroundLightBrush}"  >    
-      
+          HorizontalAlignment="{Binding ArrowAlignment, Converter={local:HorizontalAlignmentConverter}}"
+          Fill="{Binding BubbleBackground, Converter={local:StringRGBToBrushConverter}}"  >
+
       <Path.Effect>
         <DropShadowEffect BlurRadius="3" ShadowDepth="3" Color="{StaticResource WordLightBlue}" />
       </Path.Effect>
