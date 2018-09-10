@@ -21,6 +21,17 @@
       <!-- Message send text box -->
       <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
+    
+    <!-- Popup Overlay-->
+    <Border Background="Transparent" 
+            Grid.RowSpan="2"
+            Panel.ZIndex="1"
+            Visibility="{Binding AnyPopupVisible, Converter={local:BooleanToVisiblityConverter}, ConverterParameter=True}"
+            >
+      <Border.InputBindings>
+        <MouseBinding MouseAction="LeftClick" Command="{Binding PopupClickawayCommand}" />
+      </Border.InputBindings>
+    </Border>
 
     <!-- Title bar -->
     <Grid Height="50">
@@ -28,6 +39,7 @@
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
+
       <!-- Title text -->
       <TextBlock Text="Parnell"
                  Grid.ColumnSpan="2"
@@ -48,20 +60,22 @@
 
     <!-- Chat list -->
     <local:ChatMessageListControl Grid.Row="1"/>
-    
+
     <!-- Attachment menu popup -->
     <local:BubbleContent 
       Grid.Row="1" 
       DataContext="{Binding AttachmentMenu}"
       VerticalAlignment="Bottom"
+      Panel.ZIndex="2"
       HorizontalAlignment="Left"
       local:AnimateSlideInFromBottomProperty.Value="{Binding ViewModel.AttachmentMenuVisible, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type local:ChatPage}}}"
      />
-    
+
     <!-- Message send text box -->
     <Grid Grid.Row="2" 
           MinHeight="50"
           MaxHeight="114"
+          Panel.ZIndex="3"
           Background="{StaticResource ForegroundLightBrush}"
       >
 
@@ -117,8 +131,6 @@
       </StackPanel>
 
     </Grid>
-
-
 
   </Grid>
 </local:BasePage>

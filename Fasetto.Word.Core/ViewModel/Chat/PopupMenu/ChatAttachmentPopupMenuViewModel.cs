@@ -7,6 +7,7 @@ namespace Fasetto.Word.Core
   /// </summary>
   public class ChatAttachmentPopupMenuViewModel : BasePopupViewModel
   {
+
     #region Constructor
     /// <summary>
     /// Default constructor
@@ -17,7 +18,7 @@ namespace Fasetto.Word.Core
       {
         Items = new List<MenuItemViewModel>(new[]
         {
-          new MenuItemViewModel { Text="Attach a file...", Type = MenuItemType.Header},
+          new MenuItemViewModel { Text = "Attach a file...", Type = MenuItemType.Header},
           new MenuItemViewModel { Text="From computer", Icon = IconType.File},
           new MenuItemViewModel { Text="From pictures", Icon = IconType.Picture},
         })

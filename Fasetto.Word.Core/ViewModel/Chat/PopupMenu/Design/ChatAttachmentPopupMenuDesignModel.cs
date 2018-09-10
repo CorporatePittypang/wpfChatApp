@@ -21,7 +21,6 @@
     /// </summary>
     public ChatAttachmentPopupMenuDesignModel()
     {
-
     }
 
     #endregion

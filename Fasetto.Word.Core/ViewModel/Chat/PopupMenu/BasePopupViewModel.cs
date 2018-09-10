@@ -24,7 +24,9 @@
 
     #endregion
 
+
     #region Constructor
+
     /// <summary>
     /// Default constructor
     /// </summary>
@@ -35,6 +37,7 @@
       BubbleBackground = "ffffff";
       ArrowAlignment = ElementHorizontalAlignment.Left;
     }
+
     #endregion
   }
 }

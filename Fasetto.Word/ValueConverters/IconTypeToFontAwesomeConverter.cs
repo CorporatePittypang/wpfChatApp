@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Globalization;
+using System.Windows;
 using Fasetto.Word.Core;
 
 namespace Fasetto.Word
 {
   /// <summary>
-  /// A converter that takes in a <see cref="BaseViewModel"/> and returns the specific UI control
-  /// that should find to that type of ViewModel
+  /// A converter that takes in a <see cref="IconType"/> and returns 
+  /// the FontAwesome string for that icon
+  /// based on the Parameter being the same as the menu item type
   /// </summary>
-  public class PopupContentConverter : BaseValueConverter<PopupContentConverter>
+  public class IconTypeToFontAwesomeConverter : BaseValueConverter<IconTypeToFontAwesomeConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-      if (value is ChatAttachmentPopupMenuViewModel basePopup)
-        return new VerticalMenu { DataContext = basePopup.Content };
-
-      return null;
+      return ((IconType)value).ToFontAwesome();
     }
 
     public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
