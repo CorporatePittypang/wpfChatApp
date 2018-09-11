@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Fasetto.Word.Core;
-using System.Windows;
 
 namespace Fasetto.Word
 {
@@ -20,3 +19,4 @@ namespace Fasetto.Word
     }
   }
 }
+

@@ -17,7 +17,7 @@
         Title="{Binding Title}">
 
   <Window.Resources>
-    <Style TargetType="{x:Type local:MainWindow}">
+    <Style TargetType="{x:Type local:DialogWindow}">
       <Setter Property="Template">
         <Setter.Value>
           <ControlTemplate TargetType="{x:Type Window}">
@@ -80,6 +80,7 @@
                     <TextBlock Grid.Column="1"
                                Text="{Binding Title}"
                                VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
                                FontSize="{StaticResource FontSizeLarge}"
                                FontFamily="{StaticResource LatoRegular}"
                                Foreground="{StaticResource ForegroundVeryDarkBrush}"
@@ -128,7 +129,7 @@
 
   <Border Background="{StaticResource BackgroundLightBrush}"
           Padding="10">
-    <TextBlock Text="text" />
+    <ContentControl Content="{Binding Content}" />
   </Border>
 
 </Window>

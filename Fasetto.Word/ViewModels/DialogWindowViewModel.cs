@@ -20,7 +20,12 @@ using System.Windows.Input;  namespace Fasetto.Word {
     /// </summary>
     /// <param name="window"></param>     public DialogWindowViewModel(Window window) : base(window)
     {
+      // Make minimum size smaller
+      WindowMinimumWidth = 250;
+      WindowMinimumHeight = 100;
 
+      // Make title bar smaller
+      TitleHeight = 30;
     }
 
     #endregion   } } 
