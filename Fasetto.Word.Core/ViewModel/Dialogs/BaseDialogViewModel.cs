@@ -1,0 +1,13 @@
+﻿namespace Fasetto.Word.Core
+{
+	/// <summary>
+	/// A base view model for any dialog
+	/// </summary>
+	public class BaseDialogViewModel : BaseViewModel
+	{
+		/// <summary>
+		/// The title of the message box
+		/// </summary>
+		public string Title { get; set; }
+	}
+}

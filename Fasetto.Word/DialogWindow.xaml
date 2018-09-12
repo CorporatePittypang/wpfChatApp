@@ -127,7 +127,7 @@
             />
   </WindowChrome.WindowChrome>
 
-  <Border Background="{StaticResource BackgroundLightBrush}"
+  <Border Background="{StaticResource ForegroundLightBrush}"
           Padding="10">
     <ContentControl Content="{Binding Content}" />
   </Border>

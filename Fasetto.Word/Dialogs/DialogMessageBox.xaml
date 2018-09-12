@@ -4,11 +4,19 @@
 						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 						 xmlns:local="clr-namespace:Fasetto.Word"
+						 xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
 						 mc:Ignorable="d" >
 
-	<Grid Background="{StaticResource ForegroundLightBrush}">
-		<TextBlock Text="{Binding Message}" 
+	<StackPanel d:DataContext="{x:Static core:MessageBoxDialogDesignModel.Instance}"
+							Background="{StaticResource ForegroundLightBrush}">
+		<TextBlock Text="{Binding Message, FallbackValue=Test}" 
+							 Padding="5"
 							 Foreground="{StaticResource ForegroundVeryDarkBrush}"
 							/>
-	</Grid>
+
+		<Button Content="{Binding OkText}"
+						FontSize="{StaticResource FontSizeRegular}"
+						Command="{Binding CloseCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BaseDialogUserControl}}}"
+						HorizontalAlignment="Center"/>
+	</StackPanel>
 </local:BaseDialogUserControl>

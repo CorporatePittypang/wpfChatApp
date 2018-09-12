@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Fasetto.Word
 {
@@ -23,6 +24,10 @@ namespace Fasetto.Word
 
 		#region Public Commands
 
+		/// <summary>
+		/// Closes this dialog
+		/// </summary>
+		public ICommand CloseCommand { get; private set; }
 
 		#endregion
 
@@ -65,7 +70,7 @@ namespace Fasetto.Word
 				mDialogWindow.ViewModel = new DialogWindowViewModel(mDialogWindow);
 
 				// Create close command
-				//CloseCommand = new RelayCommand(() => mDialogWindow.Close());
+				CloseCommand = new RelayCommand(() => mDialogWindow.Close());
 			}
 		}
 		#endregion
@@ -79,7 +84,7 @@ namespace Fasetto.Word
 		/// <typeparam name="T">The view model type for this control</typeparam>
 		/// <returns></returns>
 		public Task ShowDialog<T>(T viewModel)
-			where T: BaseViewModel
+			where T: BaseDialogViewModel
 		{
 
 			// Create a task to await the dialog closing
@@ -94,7 +99,7 @@ namespace Fasetto.Word
 					mDialogWindow.ViewModel.WindowMinimumWidth = WindowMinimumWidth;
 					mDialogWindow.ViewModel.WindowMinimumHeight = WindowMinimumHeight;
 					mDialogWindow.ViewModel.TitleHeight = TitleHeight;
-					mDialogWindow.ViewModel.Title = Title;
+					mDialogWindow.ViewModel.Title = viewModel.Title ?? Title;
 
 					// Set this control to the dialog window content
 					mDialogWindow.ViewModel.Content = this;
@@ -116,7 +121,6 @@ namespace Fasetto.Word
 		}
 
 		#endregion
-
-
+		
 	}
 }

@@ -79,6 +79,8 @@
     <Compile Include="ViewModel\Chat\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
     <Compile Include="ViewModel\Chat\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
     <Compile Include="ViewModel\Chat\PopupMenu\BasePopupViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\BaseDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\Design\MessageBoxDialogDesignModel.cs" />
     <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\Menu\Design\MenuDesignModel.cs" />
