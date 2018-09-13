@@ -29,12 +29,12 @@
 
                 <!-- Opacity mask for corners on grid -->
                 <Border x:Name="Container"
-                                        Background="{StaticResource BackgroundLightBrush}"
-                                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" />
+                        Background="{StaticResource BackgroundLightBrush}"
+                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" />
 
                 <!-- Window border and dropshadown -->
                 <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
-                                    Background="{Binding ForegroundLightBrush, FallbackValue=White}">
+                        Background="{StaticResource ForegroundLightBrush}">
                   <Border.Effect>
                     <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
                   </Border.Effect>

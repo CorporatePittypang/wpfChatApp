@@ -26,6 +26,7 @@ namespace Fasetto.Word.Core
 
         #endregion
 
+
         #region Constructor
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace Fasetto.Word.Core
         }
 
         #endregion
+
 
         #region Command Methods
 

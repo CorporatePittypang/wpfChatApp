@@ -61,10 +61,7 @@ namespace Fasetto.Word
 		/// </summary>
 		/// <param name="element">The element</param>
 		/// <param name="value">The new value</param>
-		protected virtual void DoAnimation(FrameworkElement element, bool value)
-		{
-
-		}
+		protected virtual void DoAnimation(FrameworkElement element, bool value) { }
 	}
 
 	/// <summary>
@@ -95,10 +92,10 @@ namespace Fasetto.Word
 		{
 			if (value)
 				// Animate in
-				await element.SlideAndFadeInFromBottomAsync( 0.3f, keepMargin: false);
+				await element.SlideAndFadeInFromBottomAsync(FirstLoad? 0 : 0.3f, keepMargin: false);
 			else
 				// Animate out
-				await element.SlideAndFadeOutToBottomAsync(0.3f, keepMargin: false);
+				await element.SlideAndFadeOutToBottomAsync(FirstLoad? 0 : 0.3f, keepMargin: false);
 		}
 
 	}
@@ -113,10 +110,10 @@ namespace Fasetto.Word
 		{
 			if (value)
 				// Animate in
-				await element.FadeInAsync(FirstLoad ? 0 : 0.3f);
+				await element.FadeInAsync(0.8f);
 			else
 				// Animate out
-				await element.FadeOutAsync(FirstLoad ? 0 : 0.3f);
+				await element.FadeOutAsync(0.8f);
 		}
 
 	}

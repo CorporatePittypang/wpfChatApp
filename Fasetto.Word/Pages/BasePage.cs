@@ -38,6 +38,7 @@ namespace Fasetto.Word
 
     #endregion
 
+
     #region Constructor
 
     /// <summary>
@@ -59,6 +60,7 @@ namespace Fasetto.Word
     }
 
     #endregion
+
 
     #region Animation Load / Unload
 
@@ -140,6 +142,7 @@ namespace Fasetto.Word
 
     #endregion
 
+
     #region Public Properties
 
     /// <summary>
@@ -163,6 +166,7 @@ namespace Fasetto.Word
     }
 
     #endregion
+
 
     #region Constructor
 

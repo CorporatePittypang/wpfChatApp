@@ -1,4 +1,8 @@
-﻿using Fasetto.Word.Core; using System.Windows; using System.Windows.Controls;
+﻿using Fasetto.Word.Core;
+using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;  namespace Fasetto.Word {
   /// <summary>   /// The View Model for the custom flat window   /// </summary>   public class DialogWindowViewModel : WindowViewModel
   {

@@ -46,9 +46,6 @@ namespace Fasetto.Word
     public DialogWindow()
     {
       InitializeComponent();
-
-      DataContext = new DialogWindowViewModel(this);
-
     } 
 
     #endregion

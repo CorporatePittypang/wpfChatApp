@@ -214,7 +214,7 @@ namespace Fasetto.Word
 
 			// Add fade in animation
 			sb.AddFadeIn(seconds);
-
+			System.Console.WriteLine("Fade in");
 			// Start animating
 			sb.Begin(element);
 

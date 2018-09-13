@@ -21,14 +21,16 @@ namespace Fasetto.Word
 			// Show overlay if we lose focus
 			(DataContext as WindowViewModel).DimmableOverlayVisible = true;
 
-			Console.Out.WriteLine("deact");
+			Console.Out.WriteLine($"Deactivated, Dimm {(DataContext as WindowViewModel).DimmableOverlayVisible}");
 		}
 
 		private void AppWindow_Activated(object sender, System.EventArgs e)
 		{
 			// Hide overlay if we are focused
 			(DataContext as WindowViewModel).DimmableOverlayVisible = false;
-			Console.Out.WriteLine("act");
+
+
+			Console.Out.WriteLine($"Activated, Dimm {(DataContext as WindowViewModel).DimmableOverlayVisible}");
 		}
 	}
 }
