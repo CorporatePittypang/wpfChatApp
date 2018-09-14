@@ -5,10 +5,10 @@ using System.Globalization;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Converts the <see cref="ApplicationPage"/> to an actual view/page
-  /// </summary>
-  public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageValueConverter>
+	/// <summary>
+	/// Converts the <see cref="ApplicationPage"/> to an actual view/page
+	/// </summary>
+	public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageValueConverter>
     {
         public override object Convert(object value, Type targetType = null, object parameter = null, CultureInfo culture = null)
         {

@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word
 {
-  /// <summary>
-  /// Styles of page animations for appearing/disappearing
-  /// </summary>
-  public enum PageAnimation
+	/// <summary>
+	/// Styles of page animations for appearing/disappearing
+	/// </summary>
+	public enum PageAnimation
     {
         /// <summary>
         /// No animation takes place

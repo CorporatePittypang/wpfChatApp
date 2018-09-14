@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Fasetto.Word.Core;
+using System;
 using System.Globalization;
 using System.Windows;
-using Fasetto.Word.Core;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// A converter that takes in a <see cref="MenuItemType"/> and returns a <see cref="Visibility"/>
-  /// based on the Parameter being the same as the menu item type
-  /// </summary>
-  public class MenuItemTypeVisibilityConverter : BaseValueConverter<MenuItemTypeVisibilityConverter>
+	/// <summary>
+	/// A converter that takes in a <see cref="MenuItemType"/> and returns a <see cref="Visibility"/>
+	/// based on the Parameter being the same as the menu item type
+	/// </summary>
+	public class MenuItemTypeVisibilityConverter : BaseValueConverter<MenuItemTypeVisibilityConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

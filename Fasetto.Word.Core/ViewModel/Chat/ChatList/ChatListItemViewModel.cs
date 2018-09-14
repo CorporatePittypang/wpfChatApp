@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A view model for each chat list item in the overview chat list
-  /// </summary>
-  public class ChatListItemViewModel : BaseViewModel
+	/// <summary>
+	/// A view model for each chat list item in the overview chat list
+	/// </summary>
+	public class ChatListItemViewModel : BaseViewModel
     {
         /// <summary>
         /// The display name of this chat list

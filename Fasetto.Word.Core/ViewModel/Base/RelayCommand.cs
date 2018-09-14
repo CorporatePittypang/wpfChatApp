@@ -3,10 +3,10 @@ using System.Windows.Input;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A basic command that runs an Action
-  /// </summary>
-  public class RelayCommand : ICommand
+	/// <summary>
+	/// A basic command that runs an Action
+	/// </summary>
+	public class RelayCommand : ICommand
     {
         #region Private Members
 
@@ -26,6 +26,7 @@ namespace Fasetto.Word.Core
 
         #endregion
 
+
         #region Constructor
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace Fasetto.Word.Core
         }
 
         #endregion
+
 
         #region Command Methods
 

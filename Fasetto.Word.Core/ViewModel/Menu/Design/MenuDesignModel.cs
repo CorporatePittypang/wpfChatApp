@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The design time data for a <see cref="MenuViewModel"/>
-  /// </summary>
-  public class MenuDesignModel : MenuViewModel
+	/// <summary>
+	/// The design time data for a <see cref="MenuViewModel"/>
+	/// </summary>
+	public class MenuDesignModel : MenuViewModel
   {
 
     #region Singleton

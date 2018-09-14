@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  ///  A view model for any popup menus
-  /// </summary>
-  public class BasePopupViewModel : BaseViewModel
+	/// <summary>
+	///  A view model for any popup menus
+	/// </summary>
+	public class BasePopupViewModel : BaseViewModel
   {
     #region Public Properties
 

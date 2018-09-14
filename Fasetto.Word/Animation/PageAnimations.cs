@@ -5,10 +5,10 @@ using System.Windows.Media.Animation;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Helpers to animate pages in specific ways
-  /// </summary>
-  public static class PageAnimations
+	/// <summary>
+	/// Helpers to animate pages in specific ways
+	/// </summary>
+	public static class PageAnimations
   {
     /// <summary>
     /// Slides a page in from the right

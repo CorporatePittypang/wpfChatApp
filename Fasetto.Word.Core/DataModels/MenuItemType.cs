@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The types of items for a menu item
-  /// </summary>
-  public enum MenuItemType
+	/// <summary>
+	/// The types of items for a menu item
+	/// </summary>
+	public enum MenuItemType
   {
     /// <summary>
     /// Shows the menu text and an icon

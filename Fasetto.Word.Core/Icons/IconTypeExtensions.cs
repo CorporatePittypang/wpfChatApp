@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A helper functions for <see cref="IconType"/>
-  /// </summary>
-  public static class IconTypeExtensions
+	/// <summary>
+	/// A helper functions for <see cref="IconType"/>
+	/// </summary>
+	public static class IconTypeExtensions
   {
     /// <summary>
     /// Converts <see cref="IconType"/> to a FontAwesome string

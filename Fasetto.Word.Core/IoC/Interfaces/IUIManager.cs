@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The UI manager that handles any UI interaction in the application
-  /// </summary>
-  public interface IUIManager
+	/// <summary>
+	/// The UI manager that handles any UI interaction in the application
+	/// </summary>
+	public interface IUIManager
   {
     /// <summary>
     /// Display a simple message box to the user

@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  ///  A view model for any popup menus
-  /// </summary>
-  public class ChatAttachmentPopupMenuViewModel : BasePopupViewModel
+	/// <summary>
+	///  A view model for any popup menus
+	/// </summary>
+	public class ChatAttachmentPopupMenuViewModel : BasePopupViewModel
   {
 
     #region Constructor

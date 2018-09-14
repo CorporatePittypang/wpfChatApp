@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The design-time data for a <see cref="ChatListViewModel"/>
-  /// </summary>
-  public class ChatListDesignModel : ChatListViewModel
+	/// <summary>
+	/// The design-time data for a <see cref="ChatListViewModel"/>
+	/// </summary>
+	public class ChatListDesignModel : ChatListViewModel
   {
     #region Singleton
 

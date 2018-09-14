@@ -1,5 +1,4 @@
 ﻿using Fasetto.Word.Core;
-using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
@@ -7,10 +6,10 @@ using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Interaction logic for PageHost.xaml
-  /// </summary>
-  public partial class PageHost : UserControl
+	/// <summary>
+	/// Interaction logic for PageHost.xaml
+	/// </summary>
+	public partial class PageHost : UserControl
   {
     #region Dependency Properties
 

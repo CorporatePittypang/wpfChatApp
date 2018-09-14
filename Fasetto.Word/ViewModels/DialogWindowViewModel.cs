@@ -1,6 +1,7 @@
-﻿using Fasetto.Word.Core; using System.Windows; using System.Windows.Controls;
-using System.Windows.Input;  namespace Fasetto.Word {
-  /// <summary>   /// The View Model for the custom flat window   /// </summary>   public class DialogWindowViewModel : WindowViewModel
+﻿using System.Windows;
+using System.Windows.Controls;
+ namespace Fasetto.Word {
+	/// <summary>   /// The View Model for the custom flat window   /// </summary>   public class DialogWindowViewModel : WindowViewModel
   {
     #region Public Properties 
     /// <summary>
@@ -20,7 +21,12 @@ using System.Windows.Input;  namespace Fasetto.Word {
     /// </summary>
     /// <param name="window"></param>     public DialogWindowViewModel(Window window) : base(window)
     {
+      // Make minimum size smaller
+      WindowMinimumWidth = 250;
+      WindowMinimumHeight = 100;
 
+      // Make title bar smaller
+      TitleHeight = 30;
     }
 
     #endregion   } } 

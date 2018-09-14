@@ -3,10 +3,10 @@ using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Focuses (keyboard focus) this element on load
-  /// </summary>
-  public class IsFocusedProperty : BaseAttachedProperty<IsFocusedProperty, bool>
+	/// <summary>
+	/// Focuses (keyboard focus) this element on load
+	/// </summary>
+	public class IsFocusedProperty : BaseAttachedProperty<IsFocusedProperty, bool>
   {
     public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
     {

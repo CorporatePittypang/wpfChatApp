@@ -3,10 +3,10 @@ using System.Windows.Input;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A basic command that runs an Action
-  /// </summary>
-  public class RelayParameterizedCommand : ICommand
+	/// <summary>
+	/// A basic command that runs an Action
+	/// </summary>
+	public class RelayParameterizedCommand : ICommand
     {
         #region Private Members
 
