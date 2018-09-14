@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// A converter that takes in a date and returns a user friendly message read time
-  /// </summary>
-  public class TimeToReadTimeConverter : BaseValueConverter<TimeToReadTimeConverter>
+	/// <summary>
+	/// A converter that takes in a date and returns a user friendly message read time
+	/// </summary>
+	public class TimeToReadTimeConverter : BaseValueConverter<TimeToReadTimeConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

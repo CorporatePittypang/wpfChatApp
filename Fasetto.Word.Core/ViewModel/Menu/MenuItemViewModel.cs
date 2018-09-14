@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A view mode lfor a menu item
-  /// </summary>
-  public class MenuItemViewModel : BaseViewModel
+	/// <summary>
+	/// A view mode lfor a menu item
+	/// </summary>
+	public class MenuItemViewModel : BaseViewModel
   {
     /// <summary>
     /// Text to display for the menu item

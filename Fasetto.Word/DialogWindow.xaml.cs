@@ -1,12 +1,11 @@
-﻿using Fasetto.Word.Core;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Interaction logic for DialogWindow.xaml
-  /// </summary>
-  public partial class DialogWindow : Window
+	/// <summary>
+	/// Interaction logic for DialogWindow.xaml
+	/// </summary>
+	public partial class DialogWindow : Window
   {
     #region Private Members
 

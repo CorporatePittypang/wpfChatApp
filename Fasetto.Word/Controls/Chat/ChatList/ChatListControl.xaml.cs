@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Interaction logic for ChatListControl.xaml
-  /// </summary>
-  public partial class ChatListControl : UserControl
+	/// <summary>
+	/// Interaction logic for ChatListControl.xaml
+	/// </summary>
+	public partial class ChatListControl : UserControl
     {
         public ChatListControl()
         {

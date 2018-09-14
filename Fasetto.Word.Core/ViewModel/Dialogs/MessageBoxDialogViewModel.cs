@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// Details for a message box dialog
-  /// </summary>
-  public class MessageBoxDialogViewModel: BaseDialogViewModel
+	/// <summary>
+	/// Details for a message box dialog
+	/// </summary>
+	public class MessageBoxDialogViewModel: BaseDialogViewModel
   {
 
     /// <summary>

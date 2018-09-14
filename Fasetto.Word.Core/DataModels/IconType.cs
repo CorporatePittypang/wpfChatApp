@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The types of icons to usewithin the application
-  /// </summary>
-  public enum IconType
+	/// <summary>
+	/// The types of icons to usewithin the application
+	/// </summary>
+	public enum IconType
   {
     /// <summary>
     /// No icon 

@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A view model for each chat message thread item in the overview chat thread
-  /// </summary>
-  public class ChatMessageListItemViewModel : BaseViewModel
+	/// <summary>
+	/// A view model for each chat message thread item in the overview chat thread
+	/// </summary>
+	public class ChatMessageListItemViewModel : BaseViewModel
   {
     /// <summary>
     /// The display name of the sender of the message

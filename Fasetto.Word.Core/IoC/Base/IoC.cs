@@ -1,14 +1,12 @@
-﻿
-using System;
-using Ninject;
+﻿using Ninject;
 
 namespace Fasetto.Word.Core
 {
 
-  /// <summary>
-  /// The IoC container for our application
-  /// </summary>
-  public static class IoC
+	/// <summary>
+	/// The IoC container for our application
+	/// </summary>
+	public static class IoC
   {
     #region Public Properties
 

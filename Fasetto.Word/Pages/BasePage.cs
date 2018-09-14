@@ -1,17 +1,15 @@
-﻿using System.Windows.Controls;
-using System.Windows;
-using System.Threading.Tasks;
-using System.Windows.Media.Animation;
-using System;
-using Fasetto.Word.Core;
+﻿using Fasetto.Word.Core;
 using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// The base page for all pages to gain base functionality
-  /// </summary>
-  public class BasePage : UserControl
+	/// <summary>
+	/// The base page for all pages to gain base functionality
+	/// </summary>
+	public class BasePage : UserControl
   {
     #region Public Properties
 

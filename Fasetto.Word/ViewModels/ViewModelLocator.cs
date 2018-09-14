@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  ///  Locates view models from the IoC for using in binding in Xaml files
-  /// </summary>
-  public class ViewModelLocator
+	/// <summary>
+	///  Locates view models from the IoC for using in binding in Xaml files
+	/// </summary>
+	public class ViewModelLocator
   {
     #region Public Properties
 

@@ -7,10 +7,10 @@ using System.Windows.Input;
 
 namespace Fasetto.Word
 {
-    /// <summary>
-    /// The base class for any content that is being used inside of a <see cref="DialogWindow"/>
-    /// </summary>
-    public class BaseDialogUserControl : UserControl
+	/// <summary>
+	/// The base class for any content that is being used inside of a <see cref="DialogWindow"/>
+	/// </summary>
+	public class BaseDialogUserControl : UserControl
     {
         #region Private Members
 

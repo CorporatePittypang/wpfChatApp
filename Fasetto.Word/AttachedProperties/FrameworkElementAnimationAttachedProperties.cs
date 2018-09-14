@@ -36,8 +36,7 @@ namespace Fasetto.Word
 			{
 				// Creates a single self-unhookable event
 				// for the elements loadede event
-				RoutedEventHandler onLoaded = null;
-				onLoaded = (ss, ee) =>
+				void onLoaded(object ss, RoutedEventArgs ee)
 				{
 					// Unhook ourselves
 					element.Loaded -= onLoaded;
@@ -47,7 +46,7 @@ namespace Fasetto.Word
 
 					// No longer in first load
 					FirstLoad = false;
-				};
+				}
 
 				// Hook into the Loaded event of the element
 				element.Loaded += onLoaded;
@@ -110,10 +109,10 @@ namespace Fasetto.Word
 		{
 			if (value)
 				// Animate in
-				await element.FadeInAsync(0.8f);
+				await element.FadeInAsync(FirstLoad? 0 : 0.8f);
 			else
 				// Animate out
-				await element.FadeOutAsync(0.8f);
+				await element.FadeOutAsync(FirstLoad ? 0 : 0.8f);
 		}
 
 	}

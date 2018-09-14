@@ -4,10 +4,10 @@ using System.Reflection;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A helper for expressions
-  /// </summary>
-  public static class ExpressionHelpers
+	/// <summary>
+	/// A helper for expressions
+	/// </summary>
+	public static class ExpressionHelpers
     {
         /// <summary>
         /// Compiles an expression and gets the functions return value

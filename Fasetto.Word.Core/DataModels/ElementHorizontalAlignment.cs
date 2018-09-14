@@ -1,9 +1,9 @@
 ﻿namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// Horizontal alignment values for an element
-  /// </summary>
-  public enum ElementHorizontalAlignment
+	/// <summary>
+	/// Horizontal alignment values for an element
+	/// </summary>
+	public enum ElementHorizontalAlignment
   {
     /// <summary>
     /// Aligned to the left

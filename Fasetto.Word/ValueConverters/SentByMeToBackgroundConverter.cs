@@ -4,11 +4,11 @@ using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// A converter that takes in a boolean and if the message is sent by me, and returns the 
-  /// correct background color
-  /// </summary>
-  public class SentByMeToBackgroundConverter : BaseValueConverter<SentByMeToBackgroundConverter>
+	/// <summary>
+	/// A converter that takes in a boolean and if the message is sent by me, and returns the 
+	/// correct background color
+	/// </summary>
+	public class SentByMeToBackgroundConverter : BaseValueConverter<SentByMeToBackgroundConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

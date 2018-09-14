@@ -2,10 +2,10 @@
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// A view model for a menu
-  /// </summary>
-  public class MenuViewModel : BaseViewModel
+	/// <summary>
+	/// A view model for a menu
+	/// </summary>
+	public class MenuViewModel : BaseViewModel
   {
     /// <summary>
     /// The items in this menu

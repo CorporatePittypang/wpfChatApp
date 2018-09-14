@@ -1,6 +1,5 @@
-﻿using System.Threading.Tasks;
-using System.Windows;
-using Fasetto.Word.Core;
+﻿using Fasetto.Word.Core;
+using System.Threading.Tasks;
 
 namespace Fasetto.Word
 {

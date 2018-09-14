@@ -1,13 +1,12 @@
 ﻿using Fasetto.Word.Core;
-using System;
 using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Interaction logic for App.xaml
-  /// </summary>
-  public partial class App : Application
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App : Application
   {
     /// <summary>
     /// Custom startup so we load our IoC immediately before anything else

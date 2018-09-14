@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The design-time data for a <see cref="ChatMessageListViewModel"/>
-  /// </summary>
-  public class ChatMessageListDesignModel : ChatMessageListViewModel
+	/// <summary>
+	/// The design-time data for a <see cref="ChatMessageListViewModel"/>
+	/// </summary>
+	public class ChatMessageListDesignModel : ChatMessageListViewModel
   {
     #region Singleton
 

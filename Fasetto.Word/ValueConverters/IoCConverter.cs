@@ -1,15 +1,14 @@
 ﻿using Fasetto.Word.Core;
-using Ninject;
 using System;
 using System.Diagnostics;
 using System.Globalization;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// Converts a string name to a service pulled from the IoC container
-  /// </summary>
-  public class IoCConverter : BaseValueConverter<ApplicationPageValueConverter>
+	/// <summary>
+	/// Converts a string name to a service pulled from the IoC container
+	/// </summary>
+	public class IoCConverter : BaseValueConverter<ApplicationPageValueConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

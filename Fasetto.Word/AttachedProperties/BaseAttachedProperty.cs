@@ -3,12 +3,12 @@ using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// A base attached property to replace the vanilla WPF attached property
-  /// </summary>
-  /// <typeparam name="Parent">The parent class to be the attached property</typeparam>
-  /// <typeparam name="Property">The type of this attached property</typeparam>
-  public abstract class BaseAttachedProperty<Parent, Property>
+	/// <summary>
+	/// A base attached property to replace the vanilla WPF attached property
+	/// </summary>
+	/// <typeparam name="Parent">The parent class to be the attached property</typeparam>
+	/// <typeparam name="Property">The type of this attached property</typeparam>
+	public abstract class BaseAttachedProperty<Parent, Property>
         where Parent : new()
   {
     #region Public Events

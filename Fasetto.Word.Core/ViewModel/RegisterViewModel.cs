@@ -3,10 +3,10 @@ using System.Windows.Input;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// The View Model for a register screen
-  /// </summary>
-  public class RegisterViewModel : BaseViewModel
+	/// <summary>
+	/// The View Model for a register screen
+	/// </summary>
+	public class RegisterViewModel : BaseViewModel
   {
     #region Public Properties
 

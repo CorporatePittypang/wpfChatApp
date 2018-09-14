@@ -4,10 +4,10 @@ using System.Security;
 
 namespace Fasetto.Word.Core
 {
-  /// <summary>
-  /// Helpers for the <see cref="SecureString"/> class
-  /// </summary>
-  public static class SecureStringHelpers
+	/// <summary>
+	/// Helpers for the <see cref="SecureString"/> class
+	/// </summary>
+	public static class SecureStringHelpers
     {
         /// <summary>
         /// Unsecures a <see cref="SecureString"/> to plain text

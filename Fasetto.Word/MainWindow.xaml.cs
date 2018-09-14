@@ -1,6 +1,4 @@
-﻿using Fasetto.Word.Core;
-using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Fasetto.Word
 {
@@ -20,17 +18,12 @@ namespace Fasetto.Word
 		{
 			// Show overlay if we lose focus
 			(DataContext as WindowViewModel).DimmableOverlayVisible = true;
-
-			Console.Out.WriteLine($"Deactivated, Dimm {(DataContext as WindowViewModel).DimmableOverlayVisible}");
 		}
 
 		private void AppWindow_Activated(object sender, System.EventArgs e)
 		{
 			// Hide overlay if we are focused
 			(DataContext as WindowViewModel).DimmableOverlayVisible = false;
-
-
-			Console.Out.WriteLine($"Activated, Dimm {(DataContext as WindowViewModel).DimmableOverlayVisible}");
 		}
 	}
 }

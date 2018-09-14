@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 
 namespace Fasetto.Word
 {
-  /// <summary>
-  /// A converter that takes in a date and returns a user friendly time
-  /// </summary>
-  public class TimeToDisplayTimeConverter : BaseValueConverter<TimeToDisplayTimeConverter>
+	/// <summary>
+	/// A converter that takes in a date and returns a user friendly time
+	/// </summary>
+	public class TimeToDisplayTimeConverter : BaseValueConverter<TimeToDisplayTimeConverter>
   {
     public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
