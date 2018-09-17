@@ -182,26 +182,33 @@ namespace Fasetto.Word
 		/// <returns></returns>
 		public static async Task SlideAndFadeOutToBottomAsync(this FrameworkElement element, float seconds = 0.3f, bool keepMargin = true, int height = 0)
 		{
-			// Create the storyboard
-			var sb = new Storyboard();
+			// If we dont want to see any animation, make the element hidden
+			// as with a zero animation storyboard it still animates out
+			if (seconds == 0)
+				element.Visibility = Visibility.Hidden;
+			else
+			{
+				// Create the storyboard
+				var sb = new Storyboard();
 
-			// Add slide to bottom animation
-			sb.AddSlideToBottom(seconds, height == 0 ? element.ActualHeight : height, keepMargin: keepMargin);
+				// Add slide to bottom animation
+				sb.AddSlideToBottom(seconds, height == 0 ? element.ActualHeight : height, keepMargin: keepMargin);
 
-			// Add fade in animation
-			sb.AddFadeOut(seconds);
+				// Add fade in animation
+				sb.AddFadeOut(seconds);
 
-			// Start animating
-			sb.Begin(element);
+				// Start animating
+				sb.Begin(element);
 
-			// Make page visible
-			element.Visibility = Visibility.Visible;
+				// Make page visible
+				element.Visibility = Visibility.Visible;
 
-			// Wait for it to finish
-			await Task.Delay((int)(seconds * 1000));
+				// Wait for it to finish
+				await Task.Delay((int)(seconds * 1000));
 
-			// Hides the element
-			element.Visibility = Visibility.Hidden;
+				// Hides the element
+				element.Visibility = Visibility.Hidden;
+			}
 		}
 
 		#endregion

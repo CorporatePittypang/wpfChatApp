@@ -4,10 +4,9 @@
 						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 						 xmlns:local="clr-namespace:Fasetto.Word"
-						 mc:Ignorable="d" 
-						 d:DesignHeight="450" d:DesignWidth="800">
+						 mc:Ignorable="d" >
 	<Border Background="{StaticResource ForegroundLightBrush}" 
-					Padding="20">
+					Padding="15">
 		<Grid >
 
 			<Grid.RowDefinitions>
@@ -53,6 +52,56 @@
 			</Grid>
 
 			<!-- Main Content -->
+			<Grid Grid.Row="1"
+						Width="700"
+						VerticalAlignment="Top"
+						>
+				
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="260"  />
+					<ColumnDefinition Width="*"  />
+				</Grid.ColumnDefinitions>
+
+				<!-- Profile Picture -->
+				<Border CornerRadius="8" 
+								Margin="0 0 10 0"
+								Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+								>
+					<Border.Background>
+						<ImageBrush ImageSource="/Images/Samples/dogggggo.jpg" Stretch="UniformToFill"/>
+					</Border.Background>
+
+				</Border>
+				
+				<!-- -->
+				<Grid Grid.Column="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					
+					<!-- Labels -->
+					<TextBlock Text="Name" Grid.Row="0"/>
+					<TextBlock Text="Username" Grid.Row="1" />
+					<TextBlock Text="Password" Grid.Row="2"/>
+					<TextBlock Text="Email" Grid.Row="3"/>
+					
+					<!-- Content -->
+					<TextBlock Text="Luke Malpass" Grid.Column="1" />
+					
+				</Grid>
+				
+			</Grid>
+
 
 		</Grid>
 	</Border>
