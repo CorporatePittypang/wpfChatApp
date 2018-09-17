@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Fasetto.Word.Core;
 
 namespace Fasetto.Word
 {
@@ -6,10 +7,10 @@ namespace Fasetto.Word
 	/// Interaction logic for SideMenuControl.xaml
 	/// </summary>
 	public partial class SideMenuControl : UserControl
-    {
-        public SideMenuControl()
-        {
-            InitializeComponent();
-        }
-    }
+		{
+				public SideMenuControl()
+				{
+						InitializeComponent();
+				}
+		}
 }

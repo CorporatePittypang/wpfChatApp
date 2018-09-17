@@ -9,7 +9,7 @@ namespace Fasetto.Word
 	/// </summary>
 	public static class FrameworkElementAnimations
 	{
-		#region Slide In From Left
+		#region Slide In / Out From Left
 
 		/// <summary>
 		/// Slides an element in from the left
@@ -67,11 +67,15 @@ namespace Fasetto.Word
 
 			// Wait for it to finish
 			await Task.Delay((int)(seconds * 1000));
+
+			// Hides the element
+			element.Visibility = Visibility.Hidden;
 		}
 
 		#endregion
 
-		#region Slide In From Right
+
+		#region Slide In / Out From Right
 
 		/// <summary>
 		/// Slides an element in from the right
@@ -129,11 +133,15 @@ namespace Fasetto.Word
 
 			// Wait for it to finish
 			await Task.Delay((int)(seconds * 1000));
+
+			// Hides the element
+			element.Visibility = Visibility.Hidden;
 		}
 
 		#endregion
 
-		#region Slide In From Bottom
+
+		#region Slide In / Out From Bottom
 
 		/// <summary>
 		/// Slides an element in from the bottom
@@ -191,9 +199,13 @@ namespace Fasetto.Word
 
 			// Wait for it to finish
 			await Task.Delay((int)(seconds * 1000));
+
+			// Hides the element
+			element.Visibility = Visibility.Hidden;
 		}
 
 		#endregion
+
 
 		#region Fade In / Out
 
@@ -244,8 +256,8 @@ namespace Fasetto.Word
 			// Wait for it to finish
 			await Task.Delay((int)(seconds * 1000));
 
-			// Fully hide the element
-			element.Visibility = Visibility.Collapsed;
+			// Hides the element
+			element.Visibility = Visibility.Hidden;
 		}
 
 		#endregion
