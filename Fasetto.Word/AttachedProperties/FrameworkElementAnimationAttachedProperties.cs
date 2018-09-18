@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 
 namespace Fasetto.Word
 {
@@ -10,6 +11,16 @@ namespace Fasetto.Word
 	public abstract class AnimateBaseProperty<Parent> : BaseAttachedProperty<Parent, bool>
 		where Parent : BaseAttachedProperty<Parent, bool>, new()
 	{
+		#region Protected Properties
+
+		/// <summary>
+		/// True if this is the very first time the value has been updated
+		/// Used to make sure we run the logic at least once during first load
+		/// </summary>
+		protected bool mFirstFire = true;
+
+		#endregion
+
 
 		#region Public Properties
 
@@ -28,25 +39,38 @@ namespace Fasetto.Word
 				return;
 
 			// Do not fire if the value does not change
-			if (sender.GetValue(ValueProperty) == value && !FirstLoad)
+			if ((bool)sender.GetValue(ValueProperty) == (bool)value && !mFirstFire)
 				return;
+
+			// No longer first fire
+				mFirstFire = false;
 
 			// On first load...
 			if (FirstLoad)
 			{
+				//Starts of hidden before we decide how to animate
+				// if we are to be animated out initially
+				if (!(bool)value)
+					element.Visibility = Visibility.Hidden;
+
 				// Creates a single self-unhookable event
-				// for the elements loadede event
-				void onLoaded(object ss, RoutedEventArgs ee)
+				// for the elements Loaded event
+				RoutedEventHandler onLoaded = null;
+				onLoaded = async (ss, ee) =>
 				{
 					// Unhook ourselves
 					element.Loaded -= onLoaded;
+
+					// Slight delay after load is needed for some elements to get laid out
+					// and their width/heights correctly calculated
+					await Task.Delay(5);
 
 					// Do desired animation
 					DoAnimation(element, (bool)value);
 
 					// No longer in first load
 					FirstLoad = false;
-				}
+				};
 
 				// Hook into the Loaded event of the element
 				element.Loaded += onLoaded;
@@ -91,10 +115,10 @@ namespace Fasetto.Word
 		{
 			if (value)
 				// Animate in
-				await element.SlideAndFadeInFromBottomAsync(FirstLoad? 0 : 0.3f, keepMargin: false);
+				await element.SlideAndFadeInFromBottomAsync(FirstLoad ? 0 : 0.3f, keepMargin: false);
 			else
 				// Animate out
-				await element.SlideAndFadeOutToBottomAsync(FirstLoad? 0 : 0.3f, keepMargin: false);
+				await element.SlideAndFadeOutToBottomAsync(FirstLoad ? 0 : 0.3f, keepMargin: false);
 		}
 
 	}
@@ -129,7 +153,7 @@ namespace Fasetto.Word
 		{
 			if (value)
 				// Animate in
-				await element.FadeInAsync(FirstLoad? 0 : 0.8f);
+				await element.FadeInAsync(FirstLoad ? 0 : 0.8f);
 			else
 				// Animate out
 				await element.FadeOutAsync(FirstLoad ? 0 : 0.8f);

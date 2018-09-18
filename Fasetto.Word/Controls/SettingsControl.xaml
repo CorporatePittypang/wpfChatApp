@@ -14,7 +14,6 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 
-
 			<!-- Settings Title -->
 			<Grid Height="40" Margin="0 0 0 20">
 
@@ -56,30 +55,43 @@
 						Width="700"
 						VerticalAlignment="Top"
 						>
-				
+
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="260"  />
 					<ColumnDefinition Width="*"  />
 				</Grid.ColumnDefinitions>
 
 				<!-- Profile Picture -->
-				<Border CornerRadius="8" 
-								Margin="0 0 10 0"
-								Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-								>
-					<Border.Background>
-						<ImageBrush ImageSource="/Images/Samples/dogggggo.jpg" Stretch="UniformToFill"/>
-					</Border.Background>
+				<Grid Margin="0 0 10 0"
+							Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+							>
+					<!-- Mask for rounded corners -->
+					<Border CornerRadius="8" 
+									Name="Mask" 
+									Background="White"
+									/>
 
-				</Border>
-				
-				<!-- -->
-				<Grid Grid.Column="1">
+					<!-- Image -->
+					<Grid>
+						<Grid.OpacityMask>
+							<VisualBrush Visual="{Binding ElementName=Mask}" />
+						</Grid.OpacityMask>
+
+						<Image Source="/Images/Samples/doggo.jpg" Stretch="UniformToFill" />
+					</Grid>
+
+				</Grid>
+
+				<!--  Profile details -->
+				<Grid Grid.Column="1"
+							local:PanelChildMarginProperty.Value="15 5"
+							>
+
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto" />
 						<ColumnDefinition Width="*" />
 					</Grid.ColumnDefinitions>
-					
+
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto" />
 						<RowDefinition Height="Auto" />
@@ -88,20 +100,22 @@
 						<RowDefinition Height="Auto" />
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
-					
+
 					<!-- Labels -->
-					<TextBlock Text="Name" Grid.Row="0"/>
-					<TextBlock Text="Username" Grid.Row="1" />
-					<TextBlock Text="Password" Grid.Row="2"/>
-					<TextBlock Text="Email" Grid.Row="3"/>
-					
+					<TextBlock Text="Name"  FontFamily="{StaticResource LatoRegular}" Grid.Row="0"/>
+					<TextBlock Text="Username" FontFamily="{StaticResource LatoRegular}" Grid.Row="1" />
+					<TextBlock Text="Password" FontFamily="{StaticResource LatoRegular}" Grid.Row="2"/>
+					<TextBlock Text="Email" FontFamily="{StaticResource LatoRegular}" Grid.Row="3"/>
+
 					<!-- Content -->
 					<TextBlock Text="Luke Malpass" Grid.Column="1" />
-					
-				</Grid>
-				
-			</Grid>
+					<TextBlock Text="Luke" Grid.Column="1" Grid.Row="1"/>
+					<TextBlock Text="********" Grid.Column="1" Grid.Row="2"/>
+					<TextBlock Text="contact@anything.com" Grid.Column="1" Grid.Row="3"/>
 
+				</Grid>
+
+			</Grid>
 
 		</Grid>
 	</Border>
