@@ -6,10 +6,10 @@ namespace Fasetto.Word
 	/// Interaction logic for ChatMessageListItemControl.xaml
 	/// </summary>
 	public partial class ChatMessageListItemControl : UserControl
-  {
-    public ChatMessageListItemControl()
-    {
-      InitializeComponent();
-    }
-  }
+	{
+		public ChatMessageListItemControl()
+		{
+			InitializeComponent();
+		}
+	}
 }

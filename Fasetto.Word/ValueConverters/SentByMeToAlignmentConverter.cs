@@ -9,19 +9,19 @@ namespace Fasetto.Word
 	/// If not sent by me, aligns to the left
 	/// </summary>
 	public class SentByMeToAlignmentConverter : BaseValueConverter<SentByMeToAlignmentConverter>
-  {
-    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
+	{
+		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
 
-      if (parameter == null)
-        return (bool)value ? HorizontalAlignment.Right : HorizontalAlignment.Left;
-      else
-        return (bool)value ? HorizontalAlignment.Left : HorizontalAlignment.Right;
-    }
+			if (parameter == null)
+				return (bool)value ? HorizontalAlignment.Right : HorizontalAlignment.Left;
+			else
+				return (bool)value ? HorizontalAlignment.Left : HorizontalAlignment.Right;
+		}
 
-    public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-      throw new NotImplementedException();
-    }
-  }
+		public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

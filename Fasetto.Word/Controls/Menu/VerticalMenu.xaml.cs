@@ -6,10 +6,10 @@ namespace Fasetto.Word
 	/// Interaction logic for VerticalMenu.xaml
 	/// </summary>
 	public partial class VerticalMenu : UserControl
-  {
-    public VerticalMenu()
-    {
-      InitializeComponent();
-    }
-  }
+	{
+		public VerticalMenu()
+		{
+			InitializeComponent();
+		}
+	}
 }

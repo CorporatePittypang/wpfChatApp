@@ -8,17 +8,17 @@ namespace Fasetto.Word
 	/// and keeps the navigation history empty
 	/// </summary>
 	public class NoFrameHistory : BaseAttachedProperty<NoFrameHistory, bool>
-  {
-    public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-    {
-      // Get the frame
-      var frame = (sender as Frame);
+	{
+		public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+		{
+			// Get the frame
+			var frame = (sender as Frame);
 
-      // Hide the navigation bar
-      frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
+			// Hide the navigation bar
+			frame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
 
-      // Clear history on navigate
-      frame.Navigated += (ss, ee) => ((Frame)ss).NavigationService.RemoveBackEntry();
-    }
-  }
+			// Clear history on navigate
+			frame.Navigated += (ss, ee) => ((Frame)ss).NavigationService.RemoveBackEntry();
+		}
+	}
 }

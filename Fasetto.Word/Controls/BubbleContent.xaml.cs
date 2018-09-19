@@ -6,10 +6,10 @@ namespace Fasetto.Word
 	/// Interaction logic for BubbleContent.xaml
 	/// </summary>
 	public partial class BubbleContent : UserControl
-  {
-    public BubbleContent()
-    {
-      InitializeComponent();
-    }
-  }
+	{
+		public BubbleContent()
+		{
+			InitializeComponent();
+		}
+	}
 }
