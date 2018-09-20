@@ -1,7 +1,7 @@
 ﻿namespace Fasetto.Word.Core
 {
 	/// <summary>
-	/// Details for a message box dialog
+	/// Design time data for the <see cref="MessageBoxDialogViewModel"/>
 	/// </summary>
 	public class MessageBoxDialogDesignModel: MessageBoxDialogViewModel
 	{

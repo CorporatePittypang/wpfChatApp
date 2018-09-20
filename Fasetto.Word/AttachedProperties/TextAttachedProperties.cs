@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace Fasetto.Word
 {
@@ -16,6 +17,29 @@ namespace Fasetto.Word
 
 			// Focus this control once loaded
 			control.Loaded += (s, se) => control.Focus();
+		}
+	}
+
+
+	/// <summary>
+	/// Focuses (keyboard focus) and select all text in this element if true
+	/// </summary>
+	public class FocusAndSelectProperty : BaseAttachedProperty<FocusAndSelectProperty, bool>
+	{
+		public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+		{
+			// If we don't have a control, return
+			if (!(sender is TextBoxBase control))
+				return;
+
+			if ((bool)e.NewValue)
+			{
+				// Focus this control
+				control.Focus();
+
+				// Select all text
+				control.SelectAll();
+			}
 		}
 	}
 }
