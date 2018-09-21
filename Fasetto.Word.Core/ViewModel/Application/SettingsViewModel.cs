@@ -14,7 +14,7 @@ namespace Fasetto.Word.Core {
 		/// <summary>
 		/// The current users username
 		/// </summary>
-		public TextEntryViewModel UserName { get; set; }
+		public TextEntryViewModel Username { get; set; }
 
 		/// <summary>
 		/// The current users password
@@ -54,6 +54,12 @@ namespace Fasetto.Word.Core {
 			// Create commands
 			OpenCommand = new RelayCommand(Open);
 			CloseCommand = new RelayCommand(Close);
+
+			// TODO: Remove this with real information pulled from our database in the future
+			Name = new TextEntryViewModel { Label = "Name", OriginalText = "Good Boi" };
+			Username = new TextEntryViewModel { Label = "Username", OriginalText = "goodboi" };
+			Password = new TextEntryViewModel { Label = "Password", OriginalText = "********" };
+			Email = new TextEntryViewModel { Label = "Email", OriginalText = "contact@trolol.com" };
 		}
 
 		#endregion

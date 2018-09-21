@@ -5,15 +5,19 @@
 						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 						 xmlns:local="clr-namespace:Fasetto.Word"
 						 xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
-						 mc:Ignorable="d" 
-						 d:DataContext="{x:Static core:TextEntryDesignModel.Instance}"
-						 DataContext="{x:Static core:TextEntryDesignModel.Instance}"
-						 >
+						 mc:Ignorable="d"
+						 d:DataContext="{x:Static core:TextEntryDesignModel.Instance}">
+	
 	<!-- Grey underline -->
 	<Border BorderBrush="{StaticResource ForegroundDarkBrush}"
 						BorderThickness="0 0 0 0.5">
 
 		<Grid Background="{StaticResource ForegroundLightBrush}" >
+
+			<!-- Double click to edit -->
+			<Grid.InputBindings>
+				<MouseBinding MouseAction="LeftDoubleClick" Command="{Binding EditCommand}" />
+			</Grid.InputBindings>
 
 			<!-- Hover over to show edit button -->
 			<Grid.Triggers>
@@ -28,7 +32,7 @@
 						</Storyboard>
 					</BeginStoryboard>
 				</EventTrigger>
-					
+
 				<EventTrigger RoutedEvent="MouseLeave">
 					<BeginStoryboard>
 						<Storyboard>
@@ -42,10 +46,10 @@
 				</EventTrigger>
 
 			</Grid.Triggers>
-			
+
 			<!--Label -> Name* -> Buttons -->
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Name="LabelColumnDefinition" Width="Auto" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
@@ -58,13 +62,14 @@
 								 />
 
 			<!-- Edit Content -->
-			<TextBox  Text="{Binding EditedText}" 
+			<TextBox  Text="{Binding EditedText, UpdateSourceTrigger=PropertyChanged}" 
 								Grid.Column="1"
+								Opacity="0"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
 								local:FocusAndSelectProperty.Value="{Binding Editing}"
 								FontSize="{StaticResource FontSizeRegular}"
 								Padding="2"
-								Margin="11 10 15 8"
+								Margin="10 10 15 8"
 		 />
 
 			<!-- Content -->
@@ -73,14 +78,13 @@
 								 local:AnimateFadeInProperty.Value="{Binding Editing, Converter={local:BooleanInvertConverter}}"
 								 Margin="15 8"
 								 VerticalAlignment="Center"
+								 ToolTip="{Binding OriginalText}"
 								 />
 
 			<!-- Edit button container -->
 			<Grid Grid.Column="2"
-						HorizontalAlignment="Right"
-						VerticalAlignment="Center"
 						local:AnimateFadeInProperty.Value="{Binding Editing, Converter={local:BooleanInvertConverter}}">
-				
+
 				<!-- Edit button -->
 				<Button Content="{StaticResource FontAwesomeEllipsisHorizontalIcon}"
 								FontFamily="{StaticResource FontAwesome}"
@@ -101,9 +105,9 @@
 									>
 				<!-- Save button  -->
 				<Button Command="{Binding SaveCommand}"
+								Content="{StaticResource FontAwesomeTickIcon}"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
 								IsDefault="True"
-								Content="{StaticResource FontAwesomeTickIcon}"
 								FontFamily="{StaticResource FontAwesome}"
 								Background="{StaticResource WordGreenBrush}"
 								Padding="8 5"
@@ -115,9 +119,9 @@
 
 				<!-- Cancel button  -->
 				<Button Command="{Binding CancelCommand}"
+								Content="{StaticResource FontAwesomeCrossIcon}"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
 								IsCancel="True"
-								Content="{StaticResource FontAwesomeCrossIcon}"
 								FontFamily="{StaticResource FontAwesome}"
 								Background="{StaticResource WordOrangeBrush}"
 								Padding="8 5"
@@ -128,7 +132,7 @@
 								/>
 
 			</StackPanel>
-			
+
 		</Grid>
 
 	</Border>
