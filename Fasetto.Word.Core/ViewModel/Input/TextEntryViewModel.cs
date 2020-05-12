@@ -7,11 +7,8 @@ namespace Fasetto.Word.Core
 	/// </summary>
 	public class TextEntryViewModel : BaseViewModel
 	{
-
-		#region Public Properties
-
 		/// <summary>
-		/// The label to identify what this value is fro
+		/// The label to identify what this value is for
 		/// </summary>
 		public string Label { get; set; }
 
@@ -30,11 +27,6 @@ namespace Fasetto.Word.Core
 		/// </summary>
 		public bool Editing { get; set; }
 
-		#endregion
-
-
-		#region Public Commands
-
 		/// <summary>
 		/// Puts the control into edit mode
 		/// </summary>
@@ -50,15 +42,8 @@ namespace Fasetto.Word.Core
 		/// as well as goes back to non-edit mode
 		/// </summary>
 		public ICommand SaveCommand { get; set; }
+        
 
-		#endregion
-
-
-		#region Constructor
-
-		/// <summary>
-		/// Default Constructor
-		/// </summary>
 		public TextEntryViewModel()
 		{
 			// Create commands
@@ -66,12 +51,6 @@ namespace Fasetto.Word.Core
 			CancelCommand = new RelayCommand(Cancel);
 			SaveCommand = new RelayCommand(Save);
 		}
-
-
-		#endregion
-
-
-		#region Command Methods
 
 		/// <summary>
 		/// Puts the control into edit mode
@@ -81,7 +60,6 @@ namespace Fasetto.Word.Core
 			// Set the edited text to the current value
 			EditedText = OriginalText;
 
-			//Go into edit mode
 			Editing = true;
 		}
 
@@ -103,8 +81,6 @@ namespace Fasetto.Word.Core
 		{
 			Editing = false;
 		}
-
-		#endregion
-
+        
 	}
 }

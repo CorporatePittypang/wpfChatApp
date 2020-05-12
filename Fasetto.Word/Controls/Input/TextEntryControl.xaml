@@ -7,62 +7,66 @@
 						 xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
 						 mc:Ignorable="d"
 						 d:DataContext="{x:Static core:TextEntryDesignModel.Instance}">
-	
-	<!-- Grey underline -->
-	<Border BorderBrush="{StaticResource ForegroundDarkBrush}"
+
+    <!-- Grey underline -->
+    <Border BorderBrush="{StaticResource ForegroundDarkBrush}"
 						BorderThickness="0 0 0 0.5">
 
-		<Grid Background="{StaticResource ForegroundLightBrush}" >
+        <Grid Background="{StaticResource ForegroundLightBrush}" >
 
-			<!-- Double click to edit -->
-			<Grid.InputBindings>
-				<MouseBinding MouseAction="LeftDoubleClick" Command="{Binding EditCommand}" />
-			</Grid.InputBindings>
+            <!-- Double click to edit -->
+            <Grid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding EditCommand}" />
+            </Grid.InputBindings>
 
-			<!-- Hover over to show edit button -->
-			<Grid.Triggers>
-				<EventTrigger RoutedEvent="MouseEnter">
-					<BeginStoryboard>
-						<Storyboard>
-							<DoubleAnimation To="1" 
-															 Duration="0:0:0.4" 
-															 Storyboard.TargetName="EditButton" 
-															 Storyboard.TargetProperty="Opacity" 
-															 />
-						</Storyboard>
-					</BeginStoryboard>
-				</EventTrigger>
+            <!-- Hover over to show edit button -->
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                To="1" 
+								Duration="0:0:0.4" 
+								Storyboard.TargetName="EditButton" 
+								Storyboard.TargetProperty="Opacity" 
+								/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
 
-				<EventTrigger RoutedEvent="MouseLeave">
-					<BeginStoryboard>
-						<Storyboard>
-							<DoubleAnimation To="0" 
-															 Duration="0:0:0.4" 
-															 Storyboard.TargetName="EditButton" 
-															 Storyboard.TargetProperty="Opacity"
-															 />
-						</Storyboard>
-					</BeginStoryboard>
-				</EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation 
+                                To="0" 
+							    Duration="0:0:0.4" 
+							    Storyboard.TargetName="EditButton" 
+							    Storyboard.TargetProperty="Opacity"
+							/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
 
-			</Grid.Triggers>
+            </Grid.Triggers>
 
-			<!--Label -> Name* -> Buttons -->
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Name="LabelColumnDefinition" Width="Auto" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="Auto" />
-			</Grid.ColumnDefinitions>
+            <!--Label -> Name* -> Buttons -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Name="LabelColumnDefinition" Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-			<!-- Label -->
-			<TextBlock Text="{Binding Label}"
-								 Margin="15 12"
-								 VerticalAlignment="Center"
-								 FontFamily="{StaticResource LatoRegular}"
-								 />
+            <!-- Label -->
+            <TextBlock Text="{Binding Label}"
+                       Name="Label"
+			           Margin="15 12"
+                       HorizontalAlignment="Left"
+			           VerticalAlignment="Center"
+			           FontFamily="{StaticResource LatoRegular}"
+			/>
 
-			<!-- Edit Content -->
-			<TextBox  Text="{Binding EditedText, UpdateSourceTrigger=PropertyChanged}" 
+            <!-- Edit Content -->
+            <TextBox  Text="{Binding EditedText, UpdateSourceTrigger=PropertyChanged}" 
 								Grid.Column="1"
 								Opacity="0"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
@@ -72,8 +76,8 @@
 								Margin="10 10 15 8"
 		 />
 
-			<!-- Content -->
-			<TextBlock Text="{Binding OriginalText}" 
+            <!-- Content -->
+            <TextBlock Text="{Binding OriginalText}" 
 								 Grid.Column="1"
 								 local:AnimateFadeInProperty.Value="{Binding Editing, Converter={local:BooleanInvertConverter}}"
 								 Margin="15 8"
@@ -81,12 +85,12 @@
 								 ToolTip="{Binding OriginalText}"
 								 />
 
-			<!-- Edit button container -->
-			<Grid Grid.Column="2"
-						local:AnimateFadeInProperty.Value="{Binding Editing, Converter={local:BooleanInvertConverter}}">
+            <!-- Edit button container -->
+            <Grid Grid.Column="2"
+				    local:AnimateFadeInProperty.Value="{Binding Editing, Converter={local:BooleanInvertConverter}}">
 
-				<!-- Edit button -->
-				<Button Content="{StaticResource FontAwesomeEllipsisHorizontalIcon}"
+                <!-- Edit button -->
+                <Button Content="{StaticResource FontAwesomeEllipsisHorizontalIcon}"
 								FontFamily="{StaticResource FontAwesome}"
 								x:Name="EditButton"
 								Padding="8 5"
@@ -98,13 +102,13 @@
 								FontSize="{StaticResource FontSizeSmall}"
 								VerticalAlignment="Center"
 								/>
-			</Grid>
+            </Grid>
 
-			<StackPanel Grid.Column="2"
+            <StackPanel Grid.Column="2"
 									Orientation="Horizontal"
 									>
-				<!-- Save button  -->
-				<Button Command="{Binding SaveCommand}"
+                <!-- Save button  -->
+                <Button Command="{Binding SaveCommand}"
 								Content="{StaticResource FontAwesomeTickIcon}"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
 								IsDefault="True"
@@ -117,8 +121,8 @@
 								FontSize="{StaticResource FontSizeSmall}"
 								/>
 
-				<!-- Cancel button  -->
-				<Button Command="{Binding CancelCommand}"
+                <!-- Cancel button  -->
+                <Button Command="{Binding CancelCommand}"
 								Content="{StaticResource FontAwesomeCrossIcon}"
 								local:AnimateFadeInProperty.Value="{Binding Editing}"
 								IsCancel="True"
@@ -131,9 +135,9 @@
 								FontSize="{StaticResource FontSizeSmall}"
 								/>
 
-			</StackPanel>
+            </StackPanel>
 
-		</Grid>
+        </Grid>
 
-	</Border>
+    </Border>
 </UserControl>

@@ -86,15 +86,15 @@
 				</Grid>
 
 				<!--  Profile details -->
-				<StackPanel Grid.Column="1">
-					<local:TextEntryControl DataContext="{Binding Name}"/>
-					<local:TextEntryControl DataContext="{Binding Username}"/>
-					<local:TextEntryControl DataContext="{Binding Password}"/>
-					<local:TextEntryControl DataContext="{Binding Email}"/>
-				</StackPanel>
-				
+                <StackPanel Grid.Column="1"
+                            local:TextEntryWidthMatcherProperty.Value="True">
+                    <local:TextEntryControl DataContext="{Binding Name}"/>
+                    <local:TextEntryControl DataContext="{Binding Username}"/>
+                    <local:TextEntryControl DataContext="{Binding Password}"/>
+                    <local:TextEntryControl DataContext="{Binding Email}"/>
+                </StackPanel>
 
-			</Grid>
+            </Grid>
 
 		</Grid>
 	</Border>
