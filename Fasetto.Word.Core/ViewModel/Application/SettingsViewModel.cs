@@ -16,7 +16,7 @@ namespace Fasetto.Word.Core {
 		/// <summary>
 		/// The current users password
 		/// </summary>
-		public TextEntryViewModel Password { get; set; }
+		public PasswordEntryViewModel Password { get; set; }
 
 		/// <summary>
 		/// The current users email
@@ -46,7 +46,7 @@ namespace Fasetto.Word.Core {
 			// TODO: Remove this with real information pulled from our database in the future
 			Name     = new TextEntryViewModel { Label = "Name", OriginalText = "Good Boi" };
 			Username = new TextEntryViewModel { Label = "Username", OriginalText = "goodboi" };
-			Password = new TextEntryViewModel { Label = "Password", OriginalText = "********" };
+			Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
 			Email    = new TextEntryViewModel { Label = "Email", OriginalText = "contact@trolol.com" };
 		}
 

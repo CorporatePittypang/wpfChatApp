@@ -15,9 +15,10 @@
 							/>
 
 		<Button Content="{Binding OkText}"
-								FontSize="{StaticResource FontSizeRegular}"
-								Command="{Binding CloseCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BaseDialogUserControl}}}"
-								HorizontalAlignment="Center"
-								/>
+                IsDefault="True"
+				FontSize="{StaticResource FontSizeRegular}"
+				Command="{Binding CloseCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BaseDialogUserControl}}}"
+				HorizontalAlignment="Center"
+				/>
 	</StackPanel>
 </local:BaseDialogUserControl>

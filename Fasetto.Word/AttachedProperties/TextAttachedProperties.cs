@@ -20,7 +20,6 @@ namespace Fasetto.Word
 		}
 	}
 
-
 	/// <summary>
 	/// Focuses (keyboard focus) and select all text in this element if true
 	/// </summary>
@@ -29,17 +28,28 @@ namespace Fasetto.Word
 		public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
 		{
 			// If we don't have a control, return
-			if (!(sender is TextBoxBase control))
-				return;
+			if (sender is TextBoxBase control)
+            {
+                if ((bool)e.NewValue)
+                {
+                    // Focus this control
+                    control.Focus();
 
-			if ((bool)e.NewValue)
-			{
-				// Focus this control
-				control.Focus();
+                    // Select all text
+                    control.SelectAll();
+                }
+            }
+            if (sender is PasswordBox passwordBox)
+            {
+                if ((bool)e.NewValue)
+                {
+                    // Focus this control
+                    passwordBox.Focus();
 
-				// Select all text
-				control.SelectAll();
-			}
-		}
+                    // Select all text
+                    passwordBox.SelectAll();
+                }
+            }
+        }
 	}
 }
