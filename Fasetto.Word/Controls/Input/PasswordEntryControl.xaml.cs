@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fasetto.Word.Core;
+using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,21 +11,21 @@ namespace Fasetto.Word
     /// </summary>
     public partial class PasswordEntryControl : UserControl
     {
-        public GridLength LabelWidth
-        {
-            get => (GridLength)GetValue(LabelWidthProperty);
-            set => SetValue(LabelWidthProperty, value);
-        }
+        public GridLength LabelWidth { get; set; }
 
         // Using a DependencyProperty as the backing store for LabelWidth.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LabelWidthProperty =
-            DependencyProperty.Register("LabelWidth", typeof(GridLength), typeof(PasswordEntryControl), new PropertyMetadata(GridLength.Auto, LabelWidthChangedCallback));
+            DependencyProperty.Register(
+                "LabelWidth",
+                typeof(GridLength),
+                typeof(PasswordEntryControl),
+                new PropertyMetadata(GridLength.Auto, LabelWidthChangedCallback)
+                );
 
         public PasswordEntryControl()
         {
             InitializeComponent();
         }
-
 
         /// <summary>
         /// Called when the label width has changed
@@ -36,15 +37,32 @@ namespace Fasetto.Word
             try
             {
                 // Set the column definition width to the new value
-                (d as PasswordEntryControl).LabelColumnDefinition.Width = (GridLength)e.NewValue;
+                ((PasswordEntryControl) d).LabelColumnDefinition.Width = (GridLength)e.NewValue;
             }
             catch (Exception ex)
             {
-                // Make developer aware of potential issue
                 Debugger.Break();
 
-                (d as PasswordEntryControl).LabelColumnDefinition.Width = GridLength.Auto;
+                ((PasswordEntryControl) d).LabelColumnDefinition.Width = GridLength.Auto;
             }
+        }
+
+        private void CurrentPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is PasswordEntryViewModel viewModel)
+                viewModel.CurrentPassword = CurrentPassword.SecurePassword;
+        }
+
+        private void NewPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is PasswordEntryViewModel viewModel)
+                viewModel.NewPassword = NewPassword.SecurePassword;
+        }
+
+        private void ConfirmPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is PasswordEntryViewModel viewModel)
+                viewModel.ConfirmPassword = ConfirmPassword.SecurePassword;
         }
     }
 }
