@@ -11,10 +11,10 @@
 		/// </summary>
 		public string Message { get; set; }
 
-		/// <summary>
-		/// The text to set for the OK button
-		/// </summary>
-		public string OkText { get; set; }
+        /// <summary>
+        /// The text to set for the OK button
+        /// </summary>
+        public string OkText { get; set; } = "Ok";
 
 	}
 }

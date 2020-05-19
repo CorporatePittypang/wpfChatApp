@@ -28,7 +28,7 @@
 							Foreground="{StaticResource ForegroundDarkBrush}"
 							HorizontalAlignment="Left"
 							Height="50"
-						  VerticalAlignment="Center"
+						    VerticalAlignment="Center"
 							Command="{Binding CloseCommand}"
 							/>
 
@@ -66,8 +66,9 @@
 
 				<!-- Profile Picture -->
 				<Grid Margin="0 0 30 0"
-							Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-							>
+                      VerticalAlignment="Top"
+					  Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+					  >
 					<!-- Mask for rounded corners -->
 					<Border CornerRadius="8" 
 									Name="Mask" 
@@ -86,15 +87,15 @@
 				</Grid>
 
 				<!--  Profile details -->
-				<StackPanel Grid.Column="1">
-					<local:TextEntryControl DataContext="{Binding Name}"/>
-					<local:TextEntryControl DataContext="{Binding Username}"/>
-					<local:TextEntryControl DataContext="{Binding Password}"/>
-					<local:TextEntryControl DataContext="{Binding Email}"/>
-				</StackPanel>
-				
+                <StackPanel Grid.Column                              ="1"
+                            local:TextEntryWidthMatcherProperty.Value="True">
+                    <local:TextEntryControl DataContext     ="{Binding Name}"/>
+                    <local:TextEntryControl DataContext     ="{Binding Username}"/>
+                    <local:PasswordEntryControl DataContext ="{Binding Password}"/>
+                    <local:TextEntryControl DataContext     ="{Binding Email}"/>
+                </StackPanel>
 
-			</Grid>
+            </Grid>
 
 		</Grid>
 	</Border>
