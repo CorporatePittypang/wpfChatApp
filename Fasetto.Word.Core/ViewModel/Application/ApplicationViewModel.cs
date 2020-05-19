@@ -1,26 +1,14 @@
-﻿namespace Fasetto.Word.Core {
-	/// <summary> 	/// The application state as a view model 	/// </summary> 	public class ApplicationViewModel : BaseViewModel
-	{
-		/// <summary> 				/// The current page of the application 				/// </summary> 		public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
+﻿namespace Fasetto.Word.Core { 	public class ApplicationViewModel : BaseViewModel
+	{ 		public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
+ 		public bool SideMenuVisible { get; set; } = true;
+ 		public bool SettingsMenuVisible { get; set; }
 
-		/// <summary>
-		/// True if the side menu should be showed
-		/// </summary> 		public bool SideMenuVisible { get; set; } = true;
-
-		/// <summary>
-		/// True if the settings menu should be showed
-		/// </summary> 		public bool SettingsMenuVisible { get; set; }
-
-		/// <summary>
-		/// Navigates to the specified page
-		/// </summary>
-		/// <param name="page">The page to go to</param>
 		public void GoToPage(ApplicationPage page)
-		{
-			// Set the current page 
+        {
+            SettingsMenuVisible = false;
+
 			CurrentPage = page;
 
-			// Show side menu or not?
 			SideMenuVisible = page == ApplicationPage.Chat;
 		}
 	} } 

@@ -87,12 +87,17 @@
 				</Grid>
 
 				<!--  Profile details -->
-                <StackPanel Grid.Column                              ="1"
+                <StackPanel Grid.Column ="1"
                             local:TextEntryWidthMatcherProperty.Value="True">
                     <local:TextEntryControl DataContext     ="{Binding Name}"/>
                     <local:TextEntryControl DataContext     ="{Binding Username}"/>
                     <local:PasswordEntryControl DataContext ="{Binding Password}"/>
                     <local:TextEntryControl DataContext     ="{Binding Email}"/>
+
+                    <Button Content="{Binding LogoutButtonText}"
+                            Command="{Binding LogoutCommand}"
+                            FontSize="{StaticResource FontSizeRegular}"
+                    />
                 </StackPanel>
 
             </Grid>

@@ -1,68 +1,67 @@
 ﻿using System.Windows.Input;
 
-namespace Fasetto.Word.Core {
-    /// <summary> 	/// The settings state as a view model 	/// </summary>     public class SettingsViewModel : BaseViewModel
+namespace Fasetto.Word.Core {     public class SettingsViewModel : BaseViewModel
 	{
-		/// <summary>
-		/// The current users name
-		/// </summary>
 		public TextEntryViewModel Name { get; set; }
 
-		/// <summary>
-		/// The current users username
-		/// </summary>
 		public TextEntryViewModel Username { get; set; }
 
-		/// <summary>
-		/// The current users password
-		/// </summary>
 		public PasswordEntryViewModel Password { get; set; }
 
-		/// <summary>
-		/// The current users email
-		/// </summary>
 		public TextEntryViewModel Email { get; set; }
 
-		/// <summary>
-		/// The command to close the settings menu
-		/// </summary>
-		public ICommand CloseCommand { get; set; }
+        public string LogoutButtonText { get; set; }
 
-		/// <summary>
-		/// The command to open the settings menu
-		/// </summary>
+        public ICommand CloseCommand { get; set; }
+
 		public ICommand OpenCommand { get; set; }
 
+        public ICommand LogoutCommand { get; set; }
 
-		/// <summary>
-		/// Default constructor
-		/// </summary>
+        public ICommand ClearDataCommand { get; set; }
+
+
 		public SettingsViewModel()
 		{
-			// Create commands
-			OpenCommand  = new RelayCommand(Open);
-			CloseCommand = new RelayCommand(Close);
+			OpenCommand      = new RelayCommand(Open);
+			CloseCommand     = new RelayCommand(Close);
+            LogoutCommand    = new RelayCommand(Logout);
+            ClearDataCommand = new RelayCommand(ClearUserData);
 
-			// TODO: Remove this with real information pulled from our database in the future
-			Name     = new TextEntryViewModel { Label = "Name", OriginalText = "Good Boi" };
-			Username = new TextEntryViewModel { Label = "Username", OriginalText = "goodboi" };
-			Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
-			Email    = new TextEntryViewModel { Label = "Email", OriginalText = "contact@trolol.com" };
-		}
 
-		/// <summary>
-		/// Opens the settings menu
-		/// </summary>
+
+            // TODO: Remove this later
+            IoC.Settings.Name     = new TextEntryViewModel { Label     = "Name", OriginalText     = "Good Boi" };
+            IoC.Settings.Username = new TextEntryViewModel { Label     = "Username", OriginalText = "goodboi" };
+            IoC.Settings.Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
+            IoC.Settings.Email    = new TextEntryViewModel { Label     = "Email", OriginalText    = "contact@trolol.com" };
+
+            LogoutButtonText = "Logout";
+        }
+
 		public void Open()
 		{
 			IoC.Application.SettingsMenuVisible = true;
 		}
 
-		/// <summary>
-		/// Closes the settings menu
-		/// </summary>
-		public void Close()
-		{
-			IoC.Application.SettingsMenuVisible = false;
-		}
-	} } 
+        public void Close()
+        {
+            IoC.Application.SettingsMenuVisible = false;
+        }
+
+        public void Logout()
+        {
+            //TODO: Confirmation dialog, cleanup of cache, view model data removal
+            ClearUserData();
+
+            IoC.Application.GoToPage(ApplicationPage.Login);
+        }
+
+        private void ClearUserData()
+        {
+            Name     = null;
+            Username = null;
+            Password = null;
+            Email    = null;
+        }
+    } } 
